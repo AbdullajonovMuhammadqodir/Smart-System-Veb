@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart System | Ro'yxatdan o'tish</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --card-brown: #3C2A21;
+            --accent-green: #00E676;
+            --accent-gold: #FFD700;
+            --text-light: #E5E5E5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background: linear-gradient(45deg, #121212, #2c1e17);
+            color: var(--text-light);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .auth-card {
+            background: rgba(60, 42, 33, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 30px;
+            width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .auth-header { text-align: center; margin-bottom: 30px; }
+        
+        .auth-header i {
+            font-size: 40px;
+            color: var(--accent-green);
+            margin-bottom: 15px;
+        }
+
+        .auth-header h2 {
+            font-size: 28px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .auth-header p {
+            color: #aaa;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .input-group { margin-bottom: 15px; }
+        .full-width { grid-column: span 2; }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--accent-green);
+            margin-bottom: 5px;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 15px;
+            border-radius: 12px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus { border-color: var(--accent-green); background: rgba(0,0,0,0.5); }
+
+        textarea { resize: none; height: 60px; }
+
+        .btn-reg {
+            width: 100%;
+            background: var(--accent-green);
+            color: #121212;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-reg:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 230, 118, 0.3);
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .footer-links a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <div class="auth-header">
+            <i class="fas fa-user-plus"></i>
+            <h2>Yangi Hisob</h2>
+            <p>Smart System oilasiga qo'shiling</p>
+        </div>
+
+        <form action="/login_action" method="POST">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Nickname</label>
+                    <input type="text" name="nickname" placeholder="Masalan: SB737" required>
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" name="email" placeholder="mail@example.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>To'liq ism</label>
+                    <input type="text" name="name" placeholder="Ismingizni kiriting" required>
+                </div>
+                <div class="input-group">
+                    <label>Yoshingiz</label>
+                    <input type="number" name="age" placeholder="15" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Xavfsiz Parol</label>
+                    <input type="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>O'zingiz haqingizda (qisqacha)</label>
+                    <textarea name="bio" placeholder="Dasturchi, o'quvchi yoki o'yinchi..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-reg">Ro'yxatdan o'tish</button>
+        </form>
+
+        <div class="footer-links">
+            Profilingiz bormi? <a href="/">Tizimga kirish</a>
+        </div>
+    </div>
+
+</body>
+</html>
